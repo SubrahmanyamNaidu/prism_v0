@@ -1,0 +1,53 @@
+{
+  "chart_id": "a71e54e9",
+  "filename": "bar_20250627_110051_a71e54e9.json",
+  "chart_type": "bar",
+  "description": "This bar graph shows the number of orders for each checkout type: bundle, cart, and product.",
+  "title": "Distribution of Orders by Checkout Type",
+  "x_field": "checkout_type",
+  "y_field": "order_count",
+  "created_at": "2025-06-27T11:00:51.703469",
+  "data_points": 3,
+  "option": {
+    "option": {
+      "title": {
+        "text": "This bar graph shows the number of orders for each checkout type: bundle, cart, and product.",
+        "left": "center"
+      },
+      "tooltip": {
+        "trigger": "axis"
+      },
+      "animation": true,
+      "responsive": true,
+      "xAxis": {
+        "type": "category",
+        "data": [
+          "bundle",
+          "cart",
+          "product"
+        ]
+      },
+      "yAxis": {
+        "type": "value"
+      },
+      "series": [
+        {
+          "data": [
+            14,
+            132,
+            367
+          ],
+          "type": "bar",
+          "showBackground": true
+        }
+      ]
+    },
+    "metadata": {
+      "chart_type": "Bar",
+      "description": "This bar graph shows the number of orders for each checkout type: bundle, cart, and product.",
+      "data_points": 3,
+      "generated_at": "2025-06-27T11:00:51.703437"
+    },
+    "chart_id": "68720ed0"
+  }
+}

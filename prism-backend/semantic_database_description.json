@@ -1,0 +1,196 @@
+{
+  "alpl_prod_db": {
+    "alpl_recoveries_backup_20220822": {
+      "columns": {
+        "trip_id": {
+          "column_info": {
+            "min": 1007.0,
+            "max": 9003202101290009.0,
+            "mean": 1001703482090487.8,
+            "25%": 1002202109030008.0,
+            "50%": 1003202205130028.0,
+            "100%": 9003202101290009.0
+          },
+          "description": "The `trip_id` column, with a BIGINT data type, likely represents a unique identifier for each trip in the dataset. It features a wide range of values, suggesting it encodes specific information such as date or sequence. This column is crucial for distinguishing between different trip records, enabling accurate data retrieval and analysis in transportation or travel-related datasets."
+        },
+        "recovery_type": {
+          "column_info": "DIESEL RECOVERY, RAW MATERIAL RECOVERY, TYRES RECOVERY, DAMAGES CEMENT BAGS RECOV, ACCIDENT RECOVERY, FINES RECOVERY, PENALTY  RECOVERY, TOOLS RECOVERY, LATE REPORT DUTY FINE, SECURITY DEPOSIT - DRIVER",
+          "description": "The `recovery_type` column represents various categories of financial recoveries or deductions within a dataset, such as DIESEL RECOVERY, RAW MATERIAL RECOVERY, and TYRES RECOVERY. This VARCHAR(50) field includes entries like DAMAGES CEMENT BAGS RECOV, ACCIDENT RECOVERY, FINES RECOVERY, and SECURITY DEPOSIT - DRIVER, indicating different types of cost recoveries, penalties, fines, or reimbursements. The column is nullable, allowing for missing values, and is not unique or a primary key."
+        },
+        "recovery_amount": {
+          "column_info": {
+            "min": 0.0,
+            "max": 2899000.0,
+            "mean": 764.2958692486233,
+            "25%": 0.0,
+            "50%": 0.0,
+            "100%": 2899000.0
+          },
+          "description": "The `recovery_amount` column, with a data type of DOUBLE PRECISION, likely represents the monetary value recovered in financial or insurance contexts. It ranges from 0.0 to 2,899,000.0, with a mean of 764.30, indicating a wide variance in recovery amounts. The column is nullable and not unique, suggesting multiple entries can have similar values or be missing. This column is crucial for analyzing financial recoveries, claims, or reimbursements within the dataset."
+        },
+        "exemption_amount": {
+          "column_info": {
+            "min": 0.0,
+            "max": 2899000.0,
+            "mean": 183.88685834129765,
+            "25%": 0.0,
+            "50%": 0.0,
+            "100%": 2899000.0
+          },
+          "description": "The `exemption_amount` column, with a data type of DOUBLE PRECISION, likely represents monetary values related to exemptions, such as tax exemptions or financial deductions. The values range from 0.0 to 2,899,000.0, with a mean of 183.89, indicating that most entries are either zero or small amounts, with occasional large exemptions. This column is nullable and not unique, suggesting that exemptions are not mandatory and can be repeated across entries."
+        },
+        "paid_amount": {
+          "column_info": {
+            "min": 0.0,
+            "max": 27000.0,
+            "mean": 187.74791274139474,
+            "25%": 0.0,
+            "50%": 0.0,
+            "100%": 27000.0
+          },
+          "description": "The `paid_amount` column represents monetary values in the dataset, ranging from 0.0 to 27000.0, with a mean of 187.75. It is of DOUBLE PRECISION type, indicating precise financial transactions or payments. The column is nullable and not unique, suggesting it can contain multiple entries with zero or positive amounts, reflecting payment records or transaction amounts."
+        },
+        "created_by": {
+          "column_info": "SYSTEM",
+          "description": "The `created_by` column likely represents the identifier or username of the user or system responsible for creating a record in the dataset. This VARCHAR(15) field may contain alphanumeric characters and is not unique or a primary key, indicating multiple records can be associated with the same creator. It is nullable, suggesting that some records may not have a creator specified."
+        },
+        "created_time": {
+          "column_info": "",
+          "description": "The `created_time` column, of TIMESTAMP data type, likely represents the date and time when a record was created in the dataset. This column is nullable and not unique, indicating that it can have null values and multiple records may share the same timestamp. It is not a primary key and does not auto-increment, suggesting its role is to track the creation time rather than uniquely identify records."
+        },
+        "last_updated_by": {
+          "column_info": "SYSTEM",
+          "description": "The `last_updated_by` column, with a VARCHAR(15) data type, likely represents the identifier or username of the user or system responsible for the most recent update to a record. It is nullable and not unique, indicating multiple records may share the same updater. This column is essential for tracking data modification history and ensuring accountability within the dataset."
+        },
+        "last_updated_time": {
+          "column_info": "",
+          "description": "The `last_updated_time` column, of TIMESTAMP data type, likely represents the date and time when a record was last modified or updated in the dataset. This column is nullable and does not auto-increment, indicating that it may not always have a value. It is not unique or a primary key, suggesting it is used for tracking changes rather than identifying records. Keywords: last updated, timestamp, record modification, data change tracking, nullable."
+        },
+        "driver_name": {
+          "column_info": "",
+          "description": "The `driver_name` column, of type VARCHAR and nullable, likely represents the names of drivers in the dataset. It is not unique, primary key, or auto-incremented, indicating that multiple records may share the same driver name. This column is essential for identifying and referencing individual drivers, facilitating tasks such as driver-specific data analysis, record-keeping, and reporting within the dataset."
+        },
+        "exemption_date": {
+          "column_info": "",
+          "description": "The `exemption_date` column, of DATE type and nullable, likely represents the date on which an exemption was granted or recorded in the dataset. This column is crucial for tracking exemption timelines and may be used for filtering or sorting records based on when exemptions occurred. It is not unique or a primary key, indicating multiple records can share the same exemption date."
+        },
+        "paid_date": {
+          "column_info": "",
+          "description": "The `paid_date` column, a DATE type, likely represents the date on which a payment was made or recorded in the dataset. This column is nullable, indicating that some entries may not have a payment date. It is not unique, suggesting multiple records can share the same payment date. This column is crucial for tracking payment timelines, financial transactions, and cash flow analysis within the dataset."
+        },
+        "recovery_date": {
+          "column_info": "",
+          "description": "The `recovery_date` column likely represents the date on which a recovery event occurred, such as the resolution of a financial transaction, health recovery, or data restoration. This DATE type column is nullable, indicating that a recovery date may not be applicable or recorded for every entry. It is not unique or a primary key, suggesting multiple entries can share the same recovery date. This column is crucial for tracking recovery timelines, assessing recovery rates, and analyzing recovery patterns within the dataset."
+        },
+        "id": {
+          "column_info": {
+            "min": 42.0,
+            "max": 898244.0,
+            "mean": 747098.9490131829,
+            "25%": 799366.25,
+            "50%": 832325.5,
+            "100%": 898244.0
+          },
+          "description": "The `id` column is an integer field representing unique identifiers within the dataset, ranging from 42 to 898244, with a mean value of approximately 747099. It is not auto-incremented, unique, or a primary key, suggesting it may serve as a secondary identifier or reference key. The column is nullable, indicating that some entries might not have an associated ID. This column is crucial for indexing and referencing data entries in the dataset."
+        },
+        "driver_code": {
+          "column_info": "",
+          "description": "The `driver_code` column likely represents a unique identifier or code assigned to individual drivers within the dataset. This VARCHAR field may be used to distinguish between different drivers, facilitating data organization, retrieval, and analysis. While not necessarily unique, it serves as a key attribute for driver-related information, enhancing searchability and categorization in vector search contexts."
+        },
+        "recovery_description": {
+          "column_info": "",
+          "description": "The `recovery_description` column likely contains detailed textual information describing the process, status, or outcomes of recovery efforts, procedures, or incidents. This column may include narrative accounts, summaries, or explanations related to recovery activities, providing insights into the recovery context within the dataset. It is a nullable, non-unique VARCHAR field, indicating it may not always be populated and can contain varied textual content."
+        },
+        "gl_code": {
+          "column_info": "",
+          "description": "The `gl_code` column, of type VARCHAR, likely represents a General Ledger code used for financial categorization or accounting purposes within the dataset. This column is nullable and not unique, suggesting that multiple entries can share the same GL code, indicating shared financial attributes or classifications. It is not a primary key and does not auto-increment, highlighting its role as a descriptive financial identifier rather than a unique record identifier."
+        },
+        "sd_amount": {
+          "column_info": {
+            "min": -17500.0,
+            "max": 17500.0,
+            "mean": -137.14178431104844,
+            "25%": 0.0,
+            "50%": 0.0,
+            "100%": 17500.0
+          },
+          "description": "The `sd_amount` column, with a data type of DOUBLE PRECISION, represents a financial metric with values ranging from -17500.0 to 17500.0. The column has a mean of -137.14 and quartile values indicating that 50% of the data is 0.0, suggesting it often represents zero or neutral transactions. This column is nullable and not unique, indicating it may contain missing or duplicate financial entries. It is likely used for analyzing financial transactions, balances, or adjustments within a dataset."
+        },
+        "sd_date": {
+          "column_info": "",
+          "description": "The `sd_date` column, of TIMESTAMP data type, likely represents a date and time value associated with specific events or records in the dataset. This column may capture significant temporal information such as start dates, end dates, or timestamps of particular occurrences. It is nullable, allowing for missing values, and is not constrained to be unique or a primary key, indicating it may be used for tracking or logging purposes rather than as a unique identifier."
+        },
+        "incentive_amount": {
+          "column_info": "",
+          "description": "The `incentive_amount` column, of type DOUBLE PRECISION, likely represents the monetary value of incentives or bonuses associated with each record in the dataset. This column may include amounts that are optional, as indicated by its nullable nature. It is not unique, auto-incremented, or a primary key, suggesting it is used to track variable incentive payments or rewards that can differ across entries."
+        },
+        "incentive_code": {
+          "column_info": "",
+          "description": "The `incentive_code` column likely represents a unique identifier or code assigned to specific incentives, promotions, or discounts within the dataset. This VARCHAR field is nullable and not unique, indicating that multiple records can share the same incentive code, allowing for the grouping of transactions or entries under the same promotional offer. It is not a primary key and does not auto-increment, suggesting its purpose is to categorize or tag records with applicable incentives rather than serve as a unique identifier for each entry."
+        },
+        "salary_amount": {
+          "column_info": {
+            "min": -136748.55,
+            "max": 0.0,
+            "mean": -342.37380641393224,
+            "25%": -27.45,
+            "50%": 0.0,
+            "100%": 0.0
+          },
+          "description": "The `salary_amount` column, with a data type of DOUBLE PRECISION, likely represents negative salary adjustments, deductions, or liabilities. The column contains negative values ranging from -136748.55 to 0.0, with a mean of -342.37, indicating potential financial obligations or reductions. The column is nullable, non-unique, and not a primary key, suggesting it captures various instances of salary-related financial data."
+        },
+        "salary_date": {
+          "column_info": "",
+          "description": "The `salary_date` column, of TIMESTAMP data type, likely represents the specific date and time when a salary transaction or payment is processed or recorded. This column is essential for tracking payroll activities, financial transactions, and employee compensation timelines. It is nullable, indicating that there may be instances where the salary date is not recorded or applicable."
+        },
+        "incentive_date": {
+          "column_info": "",
+          "description": "The `incentive_date` column, of DATE data type, likely represents the specific date on which an incentive was issued, granted, or recorded in the dataset. This column may be used to track the timing of incentives, analyze trends over time, or correlate with other date-sensitive data. It is nullable, suggesting that not all records may have an associated incentive date."
+        },
+        "paid_gl": {
+          "column_info": {
+            "min": 241010.0,
+            "max": 241090.0,
+            "mean": 241039.50405567794,
+            "25%": 241020.0,
+            "50%": 241030.0,
+            "100%": 241090.0
+          },
+          "description": "The `paid_gl` column, with data type DOUBLE PRECISION, likely represents a financial account code or general ledger identifier, ranging from 241010.0 to 241090.0. It is used for tracking or categorizing financial transactions. The column is not unique, nullable, and does not auto-increment, indicating it may contain repeated values for different transactions within the dataset."
+        },
+        "refund_amount": {
+          "column_info": {
+            "min": -21235.0,
+            "max": 21235.0,
+            "mean": -4.39407310487113,
+            "25%": 0.0,
+            "50%": 0.0,
+            "100%": 21235.0
+          },
+          "description": "The `refund_amount` column, with a data type of DOUBLE PRECISION, represents the monetary value of refunds processed in the dataset. It includes both negative and positive values, ranging from -21235.0 to 21235.0, with a mean of -4.39, indicating a possible prevalence of refunds issued over received. The column is nullable, suggesting that not all entries may have associated refund amounts. The statistics show that 25% and 50% of the data are zero, implying that many transactions may not involve any refund. This column is not unique, a primary key, or auto-incremented, indicating it is likely used for financial analysis or transaction tracking within the dataset."
+        },
+        "refund_date": {
+          "column_info": "",
+          "description": "The `refund_date` column, of TIMESTAMP data type, likely represents the date and time when a refund transaction was processed in the dataset. This column may contain null values, indicating instances where a refund has not been issued, and is not unique or a primary key. It is crucial for tracking refund events, analyzing refund patterns, and managing financial records related to refunds."
+        },
+        "sd_recovery": {
+          "column_info": {
+            "min": -38957.18,
+            "max": 0.0,
+            "mean": -5.096421976196577,
+            "25%": 0.0,
+            "50%": 0.0,
+            "100%": 0.0
+          },
+          "description": "The `sd_recovery` column, of type DOUBLE PRECISION, likely represents recovery values in the dataset, with a range from -38957.18 to 0.0. The column's statistics indicate that most values are non-positive, with a mean of -5.096, and the majority of entries are zero, as shown by the 25th, 50th, and 100th percentiles. This suggests it may track loss recovery or adjustments, possibly in financial or operational contexts. The column is nullable and not unique, indicating that not all entries require a value, and duplicates are allowed."
+        },
+        "sd_recovery_date": {
+          "column_info": "",
+          "description": "The `sd_recovery_date` column likely represents the date on which a specific recovery event or process was completed or recorded. As a DATE type, it captures the exact day of recovery, allowing for chronological tracking and analysis. This column is nullable, indicating that not all records may have a recovery date available. It is not a primary key, unique, or auto-incremented, suggesting it is used for reference rather than identification. Keywords: recovery date, event completion, chronological tracking, nullable date."
+        }
+      },
+      "table_description": "The `alpl_recoveries_backup_20220822` table is part of a relational database, likely used for tracking financial recoveries and related transactions in a transportation or logistics context. It includes columns for unique trip identifiers, various types of recoveries (e.g., diesel, raw materials, fines), and associated financial amounts (recovery, exemption, paid, incentive, refund, salary). The table captures metadata such as creation and update timestamps, user identifiers, and driver information. It supports analysis of financial recoveries, deductions, and payments, aiding in financial management and accountability. The table is not constrained by primary keys or unique constraints, allowing for comprehensive data capture and retrieval."
+    },
+    "database_description": "The `alpl_prod_db` database, specifically the `alpl_recoveries_backup_20220822` table, is designed for managing and analyzing financial recoveries and transactions in a transportation or logistics setting. It tracks various recovery types (e.g., diesel, raw materials, fines) alongside financial details like recovery, exemption, paid, incentive, refund, and salary amounts. Metadata such as timestamps, user identifiers, and driver details are included for accountability and traceability. The table is flexible, lacking primary keys or unique constraints, to capture comprehensive data. This setup aids in financial management, enabling detailed analysis of recoveries and payments, though it does not explicitly define relationships with other tables."
+  }
+}

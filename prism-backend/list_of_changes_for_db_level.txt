@@ -1,0 +1,15 @@
+create_database_connection(database_connection:ConnectDB,user_id:str) -> base point need to take db_ids from here
+
+need to create get_databases(user_id:str): -> to get all the databases and send there ids to frontend with some info from frontend everytime along with the access token I want this database_id in the paylaod
+
+(user_id,data_base_id) are going to act as a unique id to find the remining things:
+
+models.py
+1. get_database_connection(user_id:str,db_id)
+2. add_extracted_schema(response_schema,user_id,db_id)
+3. get_extracted_schema(user_id: str,db_id)
+4. save_authorized_tables_columns_info(authorized_tables_columns_info,user_id,db_id)
+5. get_authorized_tables_columns_info(user_id,db_id)
+6. add_generated_semantics(semantic_response,user_id,db_id)
+7. get_semantic_data(user_id:str,db_id)
+8. kpi_executor_on_db(user_id: str)

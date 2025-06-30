@@ -1,0 +1,246 @@
+{
+  "tables": {
+    "alpl_recoveries_backup_20220822": {
+      "columns": {
+        "trip_id": {
+          "type": "BIGINT",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "recovery_type": {
+          "type": "VARCHAR(50)",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "recovery_amount": {
+          "type": "DOUBLE PRECISION",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "exemption_amount": {
+          "type": "DOUBLE PRECISION",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "paid_amount": {
+          "type": "DOUBLE PRECISION",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "created_by": {
+          "type": "VARCHAR(15)",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "created_time": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "last_updated_by": {
+          "type": "VARCHAR(15)",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "last_updated_time": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "driver_name": {
+          "type": "VARCHAR",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "exemption_date": {
+          "type": "DATE",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "paid_date": {
+          "type": "DATE",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "recovery_date": {
+          "type": "DATE",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "id": {
+          "type": "INTEGER",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "driver_code": {
+          "type": "VARCHAR",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "recovery_description": {
+          "type": "VARCHAR",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "gl_code": {
+          "type": "VARCHAR",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "sd_amount": {
+          "type": "DOUBLE PRECISION",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "sd_date": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "incentive_amount": {
+          "type": "DOUBLE PRECISION",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "incentive_code": {
+          "type": "VARCHAR",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "salary_amount": {
+          "type": "DOUBLE PRECISION",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "salary_date": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "incentive_date": {
+          "type": "DATE",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "paid_gl": {
+          "type": "DOUBLE PRECISION",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "refund_amount": {
+          "type": "DOUBLE PRECISION",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "refund_date": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "sd_recovery": {
+          "type": "DOUBLE PRECISION",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        },
+        "sd_recovery_date": {
+          "type": "DATE",
+          "nullable": true,
+          "default": null,
+          "auto_increment": false,
+          "unique": false,
+          "primary_key": false
+        }
+      },
+      "primary_key": [],
+      "foreign_keys": {},
+      "unique_constraints": [],
+      "indexes": [],
+      "check_constraints": []
+    }
+  },
+  "relationships": []
+}

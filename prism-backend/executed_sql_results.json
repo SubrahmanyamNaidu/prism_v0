@@ -1,0 +1,32 @@
+[
+  {
+    "chart_type": "Bar",
+    "description": "Number of driver-vehicle mappings by vehicle model",
+    "sql": "SELECT vehicle_model, COUNT(*) AS mapping_count FROM alpl_prod_db.alpl_driver_vehicle_mapping GROUP BY vehicle_model ORDER BY mapping_count DESC",
+    "error": "(psycopg2.errors.UndefinedTable) relation \"alpl_prod_db.alpl_driver_vehicle_mapping\" does not exist\nLINE 1: ...ECT vehicle_model, COUNT(*) AS mapping_count FROM alpl_prod_...\n                                                             ^\n\n[SQL: SELECT vehicle_model, COUNT(*) AS mapping_count FROM alpl_prod_db.alpl_driver_vehicle_mapping GROUP BY vehicle_model ORDER BY mapping_count DESC]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
+  },
+  {
+    "chart_type": "Pie",
+    "description": "Distribution of mapping types in driver-vehicle mappings",
+    "sql": "SELECT mapping_type, COUNT(*) AS count FROM alpl_prod_db.alpl_driver_vehicle_mapping GROUP BY mapping_type",
+    "error": "(psycopg2.errors.InFailedSqlTransaction) current transaction is aborted, commands ignored until end of transaction block\n\n[SQL: SELECT mapping_type, COUNT(*) AS count FROM alpl_prod_db.alpl_driver_vehicle_mapping GROUP BY mapping_type]\n(Background on this error at: https://sqlalche.me/e/20/2j85)"
+  },
+  {
+    "chart_type": "Bar",
+    "description": "Average advance amount by driver",
+    "sql": "SELECT driver_id, AVG(advance) AS average_advance FROM alpl_prod_db.alpl_driver_trip_advance GROUP BY driver_id ORDER BY average_advance DESC",
+    "error": "(psycopg2.errors.InFailedSqlTransaction) current transaction is aborted, commands ignored until end of transaction block\n\n[SQL: SELECT driver_id, AVG(advance) AS average_advance FROM alpl_prod_db.alpl_driver_trip_advance GROUP BY driver_id ORDER BY average_advance DESC]\n(Background on this error at: https://sqlalche.me/e/20/2j85)"
+  },
+  {
+    "chart_type": "Scatter",
+    "description": "Scatter plot of trip amounts versus advances",
+    "sql": "SELECT amount, advance FROM alpl_prod_db.alpl_driver_trip_advance",
+    "error": "(psycopg2.errors.InFailedSqlTransaction) current transaction is aborted, commands ignored until end of transaction block\n\n[SQL: SELECT amount, advance FROM alpl_prod_db.alpl_driver_trip_advance]\n(Background on this error at: https://sqlalche.me/e/20/2j85)"
+  },
+  {
+    "chart_type": "Bar",
+    "description": "Total transaction amount by driver",
+    "sql": "SELECT driver_id, SUM(amount) AS total_amount FROM alpl_prod_db.alpl_driver_trip_advance GROUP BY driver_id ORDER BY total_amount DESC",
+    "error": "(psycopg2.errors.InFailedSqlTransaction) current transaction is aborted, commands ignored until end of transaction block\n\n[SQL: SELECT driver_id, SUM(amount) AS total_amount FROM alpl_prod_db.alpl_driver_trip_advance GROUP BY driver_id ORDER BY total_amount DESC]\n(Background on this error at: https://sqlalche.me/e/20/2j85)"
+  }
+]

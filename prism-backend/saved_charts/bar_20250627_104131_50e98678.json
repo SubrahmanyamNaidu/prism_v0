@@ -1,0 +1,51 @@
+{
+  "chart_id": "50e98678",
+  "filename": "bar_20250627_104131_50e98678.json",
+  "chart_type": "bar",
+  "description": "This chart shows the number of orders that require installation versus those that do not.",
+  "title": "Order Count by Installation Requirement",
+  "x_field": "installation_required",
+  "y_field": "order_count",
+  "created_at": "2025-06-27T10:41:31.767387",
+  "data_points": 2,
+  "option": {
+    "option": {
+      "title": {
+        "text": "This chart shows the number of orders that require installation versus those that do not.",
+        "left": "center"
+      },
+      "tooltip": {
+        "trigger": "axis"
+      },
+      "animation": true,
+      "responsive": true,
+      "xAxis": {
+        "type": "category",
+        "data": [
+          "False",
+          "True"
+        ]
+      },
+      "yAxis": {
+        "type": "value"
+      },
+      "series": [
+        {
+          "data": [
+            496,
+            17
+          ],
+          "type": "bar",
+          "showBackground": true
+        }
+      ]
+    },
+    "metadata": {
+      "chart_type": "Bar",
+      "description": "This chart shows the number of orders that require installation versus those that do not.",
+      "data_points": 2,
+      "generated_at": "2025-06-27T10:41:31.767372"
+    },
+    "chart_id": "51f70946"
+  }
+}

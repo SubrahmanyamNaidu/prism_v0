@@ -1,0 +1,8 @@
+{
+  "name": "Base Price ",
+  "description": "Average Base price",
+  "formula": "SELECT AVG(p.base_price) FROM products p",
+  "formula_type": "general",
+  "group_by": null,
+  "created_at": "2025-06-27T10:19:10.881602"
+}

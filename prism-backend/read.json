@@ -1,0 +1,5 @@
+{'_id': ObjectId('685e6a7c08dd84cc701ef3c1'), 'user_id': '685e65c708dd84cc701ef3b6', 'kpis': [
+        {'name': 'Base Price analysis ', 'description': 'Average base price ', 'formula': 'SELECT AVG(p.base_price) FROM products p', 'formula_type': 'general', 'group_by': None, 'created_at': '2025-06-27T09: 55: 08.750435'
+        }
+    ]
+}
