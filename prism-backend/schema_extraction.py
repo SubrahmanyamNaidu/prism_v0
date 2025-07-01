@@ -31,9 +31,9 @@ def schema_extractor(authorized_data,user_id:str,db_id:str):
     authorized_tables_columns_info: Dict[str, List[str]] = authorized_data
     # print(authorized_tables_columns_info)
     # print(user_id)
-    print(authorized_data)
+    # print(authorized_data)
     data_connection=get_database_connection(user_id,db_id)
-    print(data_connection)
+    # print(data_connection)
     
     # Build connection string
     if data_connection["db_type"] == "postgresql":

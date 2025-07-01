@@ -3,14 +3,17 @@ import os
 import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine, inspect, MetaData, Table
-import openai
+from openai import AzureOpenAI
 from dotenv import load_dotenv
 from models import get_database_connection,get_extracted_schema
 load_dotenv()
 
 
 # ====== SETUP OPENAI CLIENT ======
-client = openai.OpenAI()  # make sure OPENAI_API_KEY is set in .env
+client = AzureOpenAI(    
+    azure_deployment="gpt-4o",
+    api_version="2024-12-01-preview"
+)
 
 
 
@@ -178,6 +181,6 @@ def semantic_extactor(authorized_tables_columns_info,user_id,db_id):
     with open("semantic_database_description.json", "w", encoding='utf-8') as f:
         json.dump(semantic_json, f, indent=2, ensure_ascii=False)
 
-    print("✅ Semantic understanding saved to semantic_database_description.json")
+    # print("✅ Semantic understanding saved to semantic_database_description.json")
 
     return semantic_json

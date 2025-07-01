@@ -9,7 +9,9 @@ from models import get_semantic_data
 
 # ====== LOAD ENVIRONMENT VARIABLES ======
 load_dotenv()
-openai_client = openai.OpenAI()
+openai_client = openai.AzureOpenAI(    
+    azure_deployment="text-embedding-3-small",
+    api_version="2024-12-01-preview")
 
 
 
@@ -28,8 +30,8 @@ def vectordb_insertion(user_id,db_id):
     # Get the DB name (top-level key)
     # print(semantic_json)
     db_name = list(semantic_json.keys())[0]
-    print(db_name)
-    print(semantic_json)
+    # print(db_name)
+    # print(semantic_json)
 
     # ====== SETUP QDRANT CONNECTION ======
     qdrant = QdrantClient(host="localhost", port=6333)

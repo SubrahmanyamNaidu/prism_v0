@@ -113,7 +113,7 @@ async def extract_schemas(
     user_id: str = Depends(get_current_user_id)
 ):
     try:
-        print(payload.get("db_id"))
+        # print(payload.get("db_id"))
         db_id = payload.get("db_id")
         selected_tables = payload.get("selected_tables")
         
@@ -122,9 +122,9 @@ async def extract_schemas(
         
         authorized_tables_columns_info = AuthorizedTablesColumnsInfo(root=selected_tables)
         save_authorized_tables_columns_info(authorized_tables_columns_info.root, user_id, db_id)
-        print("db")
+        # print("db")
         response_schema = schema_extractor(authorized_tables_columns_info.root, user_id, db_id)
-        print("db")
+        # print("db")
         extracted_schema_db_response = add_extracted_schema(response_schema, user_id, db_id)
         
         return extracted_schema_db_response
@@ -176,8 +176,8 @@ def get_user_kpi(request:Dict,user_id: str = Depends(get_current_user_id)):
     try:
         db_id=request.get("db_id")
         kpis_list_response = kpi_executor_on_db(user_id,db_id)
-        print("=======================================================")
-        print(kpis_list_response)
+        # print("=======================================================")
+        # print(kpis_list_response)
         # Return an empty list or dictionary if no KPIs found
         if kpis_list_response is None:
             return {

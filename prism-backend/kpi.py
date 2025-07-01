@@ -33,11 +33,12 @@ def init_openai_client():
     Raises:
         RuntimeError: If API key is not set.
     """
-    api_key = os.getenv("OPENAI_API_KEY")
+    api_key = os.getenv("AZURE_OPENAI_API_KEY")
     if not api_key:
         logger.error("OPENAI_API_KEY environment variable not set.")
         raise RuntimeError("OpenAI API key is required for natural language processing.")
-    return openai.OpenAI(api_key=api_key)
+    return openai.AzureOpenAI(azure_deployment="gpt-4o",
+    api_version="2024-12-01-preview")
 
 # PostgreSQL Configuration
 class PostgreSQLConfig(BaseModel):
@@ -524,20 +525,20 @@ def list_kpis(repo: KPIJsonRepository) -> None:
     kpis = repo.list_kpis()
     if not kpis:
         logger.info("No KPIs found.")
-        print("No KPIs found.")
+        # print("No KPIs found.")
         return
     logger.info(f"Found {len(kpis)} KPIs.")
-    print(json.dumps([kpi.dict() for kpi in kpis], indent=2, default=str))
+    # print(json.dumps([kpi.dict() for kpi in kpis], indent=2, default=str))
 
 def get_kpi(name: str, repo: KPIJsonRepository) -> None:
     """Get a KPI by name."""
     kpi = repo.get_kpi_by_name(name)
     if not kpi:
         logger.error(f"KPI '{name}' not found.")
-        print(f"KPI '{name}' not found.")
+        # print(f"KPI '{name}' not found.")
         return
     logger.info(f"Retrieved KPI: {name}")
-    print(json.dumps(kpi.dict(), indent=2, default=str))
+    # print(json.dumps(kpi.dict(), indent=2, default=str))
 
 def check_db_status(client) -> None:
     """Check PostgreSQL database connection and list tables."""
@@ -549,7 +550,7 @@ def check_db_status(client) -> None:
             message=f"Successfully connected to PostgreSQL database"
         )
         logger.info(response.message)
-        print(json.dumps(response.dict(), indent=2))
+        # print(json.dumps(response.dict(), indent=2))
     except RuntimeError as e:
         response = DBStatusResponse(
             connected=False,

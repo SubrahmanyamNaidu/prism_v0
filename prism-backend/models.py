@@ -135,7 +135,7 @@ def get_semantic_data(user_id:str,db_id):
 def kpi_executor_on_db(user_id: str,db_id:str):
     kpis_list_db_response = db_kpis.find_one({"user_id": user_id,"db_id":db_id}, {"user_id": 0, "_id": 0,"db_id":0})
     if not kpis_list_db_response:
-        print("hi")
+        # print("hi")
         return None  # Clearly return None when nothing is found
     
     
@@ -164,7 +164,7 @@ def kpi_executor_on_db(user_id: str,db_id:str):
             rows = result.fetchall()
             result_list = [dict(row._mapping) for row in rows]
             list_of_answer_kpis.append({"name":name,"result":result_list})
-    print("***************************************************")
-    print(list_of_answer_kpis)
+    # print("***************************************************")
+    # print(list_of_answer_kpis)
 
     return list_of_answer_kpis

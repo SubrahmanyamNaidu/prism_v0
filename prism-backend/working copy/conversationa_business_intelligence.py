@@ -3,7 +3,9 @@ import json
 import uuid
 from datetime import datetime
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
+# from langchain_openai import ChatOpenAI
+# from langchain_community.chat_models import AzureChatOpenAI
+from langchain_openai import AzureChatOpenAI
 from langchain_core.messages import HumanMessage
 from langchain_core.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
 from langgraph.checkpoint.memory import MemorySaver
@@ -80,7 +82,10 @@ prompt = ChatPromptTemplate.from_messages([
 ])
 
 # Model
-model = ChatOpenAI(model_name="gpt-4.1", temperature=0)
+model = AzureChatOpenAI(    
+    azure_deployment="gpt-4o",
+    api_version="2024-12-01-preview",
+    temperature=0)
 
 # Load JSON files
 with open("semantic_database_description.json", encoding="utf-8") as f1:
@@ -101,7 +106,8 @@ class DecimalEncoder(JSONEncoder):
 
 # Embedding function
 def embed_text(text):
-    response = openai.OpenAI().embeddings.create(
+    response = openai.AzureOpenAI(
+    api_version="2024-12-01-preview").embeddings.create(
         model="text-embedding-3-small",
         input=text
     )

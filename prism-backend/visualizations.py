@@ -1,4 +1,4 @@
-from openai import OpenAI
+from openai import AzureOpenAI
 from models import get_semantic_data, get_database_connection
 import json
 import uuid
@@ -20,7 +20,7 @@ semantics:
 {semantics}
 
 Based on this, generate a list of SQL queries that return data suitable for visualizing common business metrics using Apache ECharts.
-
+don't include id(s) in the chart that don't make any sense.
 Each item should be a valid JSON object with:
 - "chart_type": chart type (e.g., Line, Bar, Pie, Scatter, Radar)
 - "description": what the chart will show
@@ -46,7 +46,10 @@ Output format:
 ]
 """
 
-    client = OpenAI()
+    client = AzureOpenAI(
+    azure_deployment="gpt-4o",
+    api_version="2024-12-01-preview",
+    )
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[{"role": "user", "content": prompt}],
@@ -130,8 +133,12 @@ def generate_echarts_from_data(chart_definitions):
     """Generate ECharts configuration from query results."""
     def convert(val):
         """Convert database values to chart-friendly formats."""
-        if isinstance(val, str) and val.endswith("T00:00:00"):
-            return val[:10]  # Convert ISO date to 'YYYY-MM-DD'
+        if isinstance(val, (datetime, date)):
+            return val.isoformat()
+        elif isinstance(val, Decimal):
+            return float(val)
+        elif isinstance(val, RowMapping):
+            return dict(val)  # Convert ISO date to 'YYYY-MM-DD'
         return val
 
     def get_option(chart):
@@ -254,13 +261,16 @@ def visualization_generator(user_id, db_id):
     try:
         # Step 1: Generate SQL queries
         sql_query_response = get_sql_queries(user_id, db_id)
-        
+        print("--------------------------------------")
+        print(sql_query_response)
         # Step 2: Execute queries
         sql_query_executer_response = execute_sql_queries(sql_query_response, user_id, db_id)
-        
+        print("======================================")
+        print(sql_query_executer_response)
         # Step 3: Generate ECharts configurations
         gen_chat_response = generate_echarts_from_data(sql_query_executer_response)
-        
+        print("**************************************")
+        print(gen_chat_response)
         # Step 4: Add metadata and store in database
         for viz_obj in gen_chat_response:
             viz_obj["pinned"] = False

@@ -1,8 +1,8 @@
 {
-  "name": "Base Price ",
-  "description": "Average Base price",
-  "formula": "SELECT AVG(p.base_price) FROM products p",
+  "name": "Sales",
+  "description": "Total revenue generated from all orders",
+  "formula": "SELECT SUM(o.order_value) AS total_revenue FROM orders o WHERE o.status = 'completed'",
   "formula_type": "general",
   "group_by": null,
-  "created_at": "2025-06-27T10:19:10.881602"
+  "created_at": "2025-06-30T14:20:40.036990"
 }

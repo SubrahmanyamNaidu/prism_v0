@@ -1,196 +1,283 @@
 {
-  "alpl_prod_db": {
-    "alpl_recoveries_backup_20220822": {
+  "postgres": {
+    "products": {
       "columns": {
-        "trip_id": {
-          "column_info": {
-            "min": 1007.0,
-            "max": 9003202101290009.0,
-            "mean": 1001703482090487.8,
-            "25%": 1002202109030008.0,
-            "50%": 1003202205130028.0,
-            "100%": 9003202101290009.0
-          },
-          "description": "The `trip_id` column, with a BIGINT data type, likely represents a unique identifier for each trip in the dataset. It features a wide range of values, suggesting it encodes specific information such as date or sequence. This column is crucial for distinguishing between different trip records, enabling accurate data retrieval and analysis in transportation or travel-related datasets."
-        },
-        "recovery_type": {
-          "column_info": "DIESEL RECOVERY, RAW MATERIAL RECOVERY, TYRES RECOVERY, DAMAGES CEMENT BAGS RECOV, ACCIDENT RECOVERY, FINES RECOVERY, PENALTY  RECOVERY, TOOLS RECOVERY, LATE REPORT DUTY FINE, SECURITY DEPOSIT - DRIVER",
-          "description": "The `recovery_type` column represents various categories of financial recoveries or deductions within a dataset, such as DIESEL RECOVERY, RAW MATERIAL RECOVERY, and TYRES RECOVERY. This VARCHAR(50) field includes entries like DAMAGES CEMENT BAGS RECOV, ACCIDENT RECOVERY, FINES RECOVERY, and SECURITY DEPOSIT - DRIVER, indicating different types of cost recoveries, penalties, fines, or reimbursements. The column is nullable, allowing for missing values, and is not unique or a primary key."
-        },
-        "recovery_amount": {
-          "column_info": {
-            "min": 0.0,
-            "max": 2899000.0,
-            "mean": 764.2958692486233,
-            "25%": 0.0,
-            "50%": 0.0,
-            "100%": 2899000.0
-          },
-          "description": "The `recovery_amount` column, with a data type of DOUBLE PRECISION, likely represents the monetary value recovered in financial or insurance contexts. It ranges from 0.0 to 2,899,000.0, with a mean of 764.30, indicating a wide variance in recovery amounts. The column is nullable and not unique, suggesting multiple entries can have similar values or be missing. This column is crucial for analyzing financial recoveries, claims, or reimbursements within the dataset."
-        },
-        "exemption_amount": {
-          "column_info": {
-            "min": 0.0,
-            "max": 2899000.0,
-            "mean": 183.88685834129765,
-            "25%": 0.0,
-            "50%": 0.0,
-            "100%": 2899000.0
-          },
-          "description": "The `exemption_amount` column, with a data type of DOUBLE PRECISION, likely represents monetary values related to exemptions, such as tax exemptions or financial deductions. The values range from 0.0 to 2,899,000.0, with a mean of 183.89, indicating that most entries are either zero or small amounts, with occasional large exemptions. This column is nullable and not unique, suggesting that exemptions are not mandatory and can be repeated across entries."
-        },
-        "paid_amount": {
-          "column_info": {
-            "min": 0.0,
-            "max": 27000.0,
-            "mean": 187.74791274139474,
-            "25%": 0.0,
-            "50%": 0.0,
-            "100%": 27000.0
-          },
-          "description": "The `paid_amount` column represents monetary values in the dataset, ranging from 0.0 to 27000.0, with a mean of 187.75. It is of DOUBLE PRECISION type, indicating precise financial transactions or payments. The column is nullable and not unique, suggesting it can contain multiple entries with zero or positive amounts, reflecting payment records or transaction amounts."
-        },
-        "created_by": {
-          "column_info": "SYSTEM",
-          "description": "The `created_by` column likely represents the identifier or username of the user or system responsible for creating a record in the dataset. This VARCHAR(15) field may contain alphanumeric characters and is not unique or a primary key, indicating multiple records can be associated with the same creator. It is nullable, suggesting that some records may not have a creator specified."
-        },
-        "created_time": {
-          "column_info": "",
-          "description": "The `created_time` column, of TIMESTAMP data type, likely represents the date and time when a record was created in the dataset. This column is nullable and not unique, indicating that it can have null values and multiple records may share the same timestamp. It is not a primary key and does not auto-increment, suggesting its role is to track the creation time rather than uniquely identify records."
-        },
-        "last_updated_by": {
-          "column_info": "SYSTEM",
-          "description": "The `last_updated_by` column, with a VARCHAR(15) data type, likely represents the identifier or username of the user or system responsible for the most recent update to a record. It is nullable and not unique, indicating multiple records may share the same updater. This column is essential for tracking data modification history and ensuring accountability within the dataset."
-        },
-        "last_updated_time": {
-          "column_info": "",
-          "description": "The `last_updated_time` column, of TIMESTAMP data type, likely represents the date and time when a record was last modified or updated in the dataset. This column is nullable and does not auto-increment, indicating that it may not always have a value. It is not unique or a primary key, suggesting it is used for tracking changes rather than identifying records. Keywords: last updated, timestamp, record modification, data change tracking, nullable."
-        },
-        "driver_name": {
-          "column_info": "",
-          "description": "The `driver_name` column, of type VARCHAR and nullable, likely represents the names of drivers in the dataset. It is not unique, primary key, or auto-incremented, indicating that multiple records may share the same driver name. This column is essential for identifying and referencing individual drivers, facilitating tasks such as driver-specific data analysis, record-keeping, and reporting within the dataset."
-        },
-        "exemption_date": {
-          "column_info": "",
-          "description": "The `exemption_date` column, of DATE type and nullable, likely represents the date on which an exemption was granted or recorded in the dataset. This column is crucial for tracking exemption timelines and may be used for filtering or sorting records based on when exemptions occurred. It is not unique or a primary key, indicating multiple records can share the same exemption date."
-        },
-        "paid_date": {
-          "column_info": "",
-          "description": "The `paid_date` column, a DATE type, likely represents the date on which a payment was made or recorded in the dataset. This column is nullable, indicating that some entries may not have a payment date. It is not unique, suggesting multiple records can share the same payment date. This column is crucial for tracking payment timelines, financial transactions, and cash flow analysis within the dataset."
-        },
-        "recovery_date": {
-          "column_info": "",
-          "description": "The `recovery_date` column likely represents the date on which a recovery event occurred, such as the resolution of a financial transaction, health recovery, or data restoration. This DATE type column is nullable, indicating that a recovery date may not be applicable or recorded for every entry. It is not unique or a primary key, suggesting multiple entries can share the same recovery date. This column is crucial for tracking recovery timelines, assessing recovery rates, and analyzing recovery patterns within the dataset."
-        },
         "id": {
           "column_info": {
-            "min": 42.0,
-            "max": 898244.0,
-            "mean": 747098.9490131829,
-            "25%": 799366.25,
-            "50%": 832325.5,
-            "100%": 898244.0
+            "min": 21.0,
+            "max": 418.0,
+            "mean": 232.95539033457248,
+            "25%": 97.0,
+            "50%": 280.0,
+            "100%": 418.0
           },
-          "description": "The `id` column is an integer field representing unique identifiers within the dataset, ranging from 42 to 898244, with a mean value of approximately 747099. It is not auto-incremented, unique, or a primary key, suggesting it may serve as a secondary identifier or reference key. The column is nullable, indicating that some entries might not have an associated ID. This column is crucial for indexing and referencing data entries in the dataset."
+          "description": "The `id` column is a unique, non-null, auto-incrementing integer serving as the primary key for identifying individual records in the dataset. It ranges from 21 to 418, representing sequential identifiers for products or entities."
         },
-        "driver_code": {
-          "column_info": "",
-          "description": "The `driver_code` column likely represents a unique identifier or code assigned to individual drivers within the dataset. This VARCHAR field may be used to distinguish between different drivers, facilitating data organization, retrieval, and analysis. While not necessarily unique, it serves as a key attribute for driver-related information, enhancing searchability and categorization in vector search contexts."
+        "title": {
+          "column_info": "testt, Fertilzer pellets, Lawn Aerator, kdjfshksd, Tree TREE, Spring Lawn Cleanup test, lawn gloves, Earthworm compost, Red Mulch, TST",
+          "description": "Product or item titles representing various lawn care, gardening, and landscaping supplies, including tools, materials, and related accessories."
         },
-        "recovery_description": {
-          "column_info": "",
-          "description": "The `recovery_description` column likely contains detailed textual information describing the process, status, or outcomes of recovery efforts, procedures, or incidents. This column may include narrative accounts, summaries, or explanations related to recovery activities, providing insights into the recovery context within the dataset. It is a nullable, non-unique VARCHAR field, indicating it may not always be populated and can contain varied textual content."
-        },
-        "gl_code": {
-          "column_info": "",
-          "description": "The `gl_code` column, of type VARCHAR, likely represents a General Ledger code used for financial categorization or accounting purposes within the dataset. This column is nullable and not unique, suggesting that multiple entries can share the same GL code, indicating shared financial attributes or classifications. It is not a primary key and does not auto-increment, highlighting its role as a descriptive financial identifier rather than a unique record identifier."
-        },
-        "sd_amount": {
+        "base_price": {
           "column_info": {
-            "min": -17500.0,
-            "max": 17500.0,
-            "mean": -137.14178431104844,
-            "25%": 0.0,
-            "50%": 0.0,
-            "100%": 17500.0
+            "min": 0.0,
+            "max": 30000.0,
+            "mean": 682.741797235023,
+            "25%": 29.0,
+            "50%": 150.0,
+            "100%": 30000.0
           },
-          "description": "The `sd_amount` column, with a data type of DOUBLE PRECISION, represents a financial metric with values ranging from -17500.0 to 17500.0. The column has a mean of -137.14 and quartile values indicating that 50% of the data is 0.0, suggesting it often represents zero or neutral transactions. This column is nullable and not unique, indicating it may contain missing or duplicate financial entries. It is likely used for analyzing financial transactions, balances, or adjustments within a dataset."
+          "description": "The `base_price` column represents the numeric monetary value of an item's base cost, ranging from 0.00 to 30,000.00, with a precision of two decimal places. It likely captures pricing data, such as product costs or service fees, and includes statistical insights like mean, median, and quartiles for analysis. This column is nullable and not constrained by uniqueness or primary key properties."
         },
-        "sd_date": {
-          "column_info": "",
-          "description": "The `sd_date` column, of TIMESTAMP data type, likely represents a date and time value associated with specific events or records in the dataset. This column may capture significant temporal information such as start dates, end dates, or timestamps of particular occurrences. It is nullable, allowing for missing values, and is not constrained to be unique or a primary key, indicating it may be used for tracking or logging purposes rather than as a unique identifier."
-        },
-        "incentive_amount": {
-          "column_info": "",
-          "description": "The `incentive_amount` column, of type DOUBLE PRECISION, likely represents the monetary value of incentives or bonuses associated with each record in the dataset. This column may include amounts that are optional, as indicated by its nullable nature. It is not unique, auto-incremented, or a primary key, suggesting it is used to track variable incentive payments or rewards that can differ across entries."
-        },
-        "incentive_code": {
-          "column_info": "",
-          "description": "The `incentive_code` column likely represents a unique identifier or code assigned to specific incentives, promotions, or discounts within the dataset. This VARCHAR field is nullable and not unique, indicating that multiple records can share the same incentive code, allowing for the grouping of transactions or entries under the same promotional offer. It is not a primary key and does not auto-increment, suggesting its purpose is to categorize or tag records with applicable incentives rather than serve as a unique identifier for each entry."
-        },
-        "salary_amount": {
+        "category_id": {
           "column_info": {
-            "min": -136748.55,
-            "max": 0.0,
-            "mean": -342.37380641393224,
-            "25%": -27.45,
-            "50%": 0.0,
-            "100%": 0.0
+            "min": 1.0,
+            "max": 144.0,
+            "mean": 18.54646840148699,
+            "25%": 2.0,
+            "50%": 4.0,
+            "100%": 144.0
           },
-          "description": "The `salary_amount` column, with a data type of DOUBLE PRECISION, likely represents negative salary adjustments, deductions, or liabilities. The column contains negative values ranging from -136748.55 to 0.0, with a mean of -342.37, indicating potential financial obligations or reductions. The column is nullable, non-unique, and not a primary key, suggesting it captures various instances of salary-related financial data."
+          "description": "The `category_id` column is an INTEGER field representing unique identifiers for categories within the dataset. It ranges from 1 to 144, with statistical distribution indicating frequent usage of lower IDs. This non-null, non-primary key column likely maps records to predefined category classifications or groupings, essential for organizing and categorizing data."
         },
-        "salary_date": {
+        "description": {
+          "column_info": "test, Nourish Growth: Concentrated formula provides key nutrients to support healthy growth and production for a wide variety of plants including vegetables, fruits, herbs and flowers. Easy Application: Simply add recommended amount to watering can and apply to soil or foliar spray as needed for fast absorption. Stimulate Yields: Micronutrients boost photosynthesis and metabolism to help maximize harvest sizes from established plants. All-Season Formula: Suitable for use throughout the growing cycle from early growth stage to maturation to keep plants thriving year-round. 3 Bottle Pack: Convenient three bottle set provides enough nutrient-rich solution for large or many small-scale gardens, groves or plantings., Lawn Aerator, fjskdfksd, TESTT, TEST, lawn gloves, Nelgates Premium Earthworm compost for plants, Suitable for all plants, compost for plant growth 500gms, Helps to regulate soil temperature and prevent soil erosion, pressure sprayer",
+          "description": "The `description` column contains detailed textual information about gardening and plant care products, including features, usage instructions, benefits, and specifications. Keywords include nutrients, growth, plants, compost, aerator, sprayer, gloves, soil, and gardening tools."
+        },
+        "asset_url": {
+          "column_info": "_DSC6661.jpg, LD1.png, LawnAerator.jpeg, c0a9a046-360d-422a-bcc4-b9b7ab60638d.png, download (1).jpg, download (2).jpg, lawn gloves.png, vermicompost1-Photoroom.png, 20250317034828-_DSC6683.jpg, free-photo-of-person-driving-a-lawnmower.jpeg",
+          "description": "The `asset_url` column stores file names or paths of image assets, primarily representing lawn care, gardening, and outdoor equipment visuals. It includes diverse formats like JPEG and PNG, with filenames suggesting product images, branded content, or user-generated media."
+        },
+        "created_at": {
           "column_info": "",
-          "description": "The `salary_date` column, of TIMESTAMP data type, likely represents the specific date and time when a salary transaction or payment is processed or recorded. This column is essential for tracking payroll activities, financial transactions, and employee compensation timelines. It is nullable, indicating that there may be instances where the salary date is not recorded or applicable."
+          "description": "The `created_at` column represents the timestamp indicating when a record was created, likely used for tracking creation dates and times in the dataset. It is nullable, defaults to the current timestamp, and is essential for time-based queries, data auditing, and chronological analysis."
         },
-        "incentive_date": {
+        "updated_at": {
           "column_info": "",
-          "description": "The `incentive_date` column, of DATE data type, likely represents the specific date on which an incentive was issued, granted, or recorded in the dataset. This column may be used to track the timing of incentives, analyze trends over time, or correlate with other date-sensitive data. It is nullable, suggesting that not all records may have an associated incentive date."
+          "description": "The `updated_at` column, a nullable TIMESTAMP field, likely tracks the last modification or update time for a record in the dataset. With a default value of `CURRENT_TIMESTAMP`, it automatically records changes, serving as a key indicator for data freshness, versioning, and audit trails."
         },
-        "paid_gl": {
+        "type": {
+          "column_info": "product, service",
+          "description": "The `type` column categorizes entries as either \"product\" or \"service,\" indicating the classification or nature of the entity in the dataset. It represents the distinction between tangible goods and intangible offerings, useful for filtering, grouping, or analyzing data based on entity type."
+        },
+        "features": {
+          "column_info": "",
+          "description": "The `features` column stores structured data in JSONB format, likely representing detailed attributes, characteristics, or metadata associated with each record in the dataset. It is flexible, nullable, and optimized for querying and indexing complex, nested information."
+        },
+        "seo_keywords": {
+          "column_info": "",
+          "description": "The `seo_keywords` column stores an array of text values representing search engine optimization (SEO) keywords associated with a record, likely used for improving discoverability, relevance, and ranking in search results."
+        },
+        "tag": {
+          "column_info": "",
+          "description": "The `tag` column likely represents a descriptive label, keyword, or category used to classify, identify, or group related data entries. It is a flexible, text-based field for metadata or contextual information, supporting dynamic categorization or tagging in the dataset."
+        },
+        "status": {
+          "column_info": "inactive, active",
+          "description": "The `status` column represents the activity state of a record, indicating whether it is \"active\" or \"inactive.\" It is a nullable VARCHAR field with a default value of \"active,\" likely used to track the operational or availability status of entities in the dataset."
+        },
+        "trend_type": {
+          "column_info": "",
+          "description": "The `trend_type` column represents the categorical classification or label of trends, capturing the type, category, or nature of a trend in the dataset. It is a variable-length text field (up to 50 characters) that may include descriptors such as trend categories, themes, or classifications, and is nullable."
+        },
+        "discount_id": {
           "column_info": {
-            "min": 241010.0,
-            "max": 241090.0,
-            "mean": 241039.50405567794,
-            "25%": 241020.0,
-            "50%": 241030.0,
-            "100%": 241090.0
+            "min": 77.0,
+            "max": 179.0,
+            "mean": 131.06666666666666,
+            "25%": 111.0,
+            "50%": 111.0,
+            "100%": 179.0
           },
-          "description": "The `paid_gl` column, with data type DOUBLE PRECISION, likely represents a financial account code or general ledger identifier, ranging from 241010.0 to 241090.0. It is used for tracking or categorizing financial transactions. The column is not unique, nullable, and does not auto-increment, indicating it may contain repeated values for different transactions within the dataset."
+          "description": "The `discount_id` column is an INTEGER field representing unique identifiers for discounts or promotional offers in the dataset. It ranges from 77 to 179, with statistical values indicating distribution patterns. This column is nullable, non-auto-incrementing, and not a primary or unique key, suggesting it serves as a reference or categorization for discount-related data."
         },
-        "refund_amount": {
+        "offer_id": {
           "column_info": {
-            "min": -21235.0,
-            "max": 21235.0,
-            "mean": -4.39407310487113,
-            "25%": 0.0,
-            "50%": 0.0,
-            "100%": 21235.0
+            "min": 13.0,
+            "max": 101.0,
+            "mean": 92.35757575757576,
+            "25%": 95.0,
+            "50%": 95.0,
+            "100%": 101.0
           },
-          "description": "The `refund_amount` column, with a data type of DOUBLE PRECISION, represents the monetary value of refunds processed in the dataset. It includes both negative and positive values, ranging from -21235.0 to 21235.0, with a mean of -4.39, indicating a possible prevalence of refunds issued over received. The column is nullable, suggesting that not all entries may have associated refund amounts. The statistics show that 25% and 50% of the data are zero, implying that many transactions may not involve any refund. This column is not unique, a primary key, or auto-incremented, indicating it is likely used for financial analysis or transaction tracking within the dataset."
-        },
-        "refund_date": {
-          "column_info": "",
-          "description": "The `refund_date` column, of TIMESTAMP data type, likely represents the date and time when a refund transaction was processed in the dataset. This column may contain null values, indicating instances where a refund has not been issued, and is not unique or a primary key. It is crucial for tracking refund events, analyzing refund patterns, and managing financial records related to refunds."
-        },
-        "sd_recovery": {
-          "column_info": {
-            "min": -38957.18,
-            "max": 0.0,
-            "mean": -5.096421976196577,
-            "25%": 0.0,
-            "50%": 0.0,
-            "100%": 0.0
-          },
-          "description": "The `sd_recovery` column, of type DOUBLE PRECISION, likely represents recovery values in the dataset, with a range from -38957.18 to 0.0. The column's statistics indicate that most values are non-positive, with a mean of -5.096, and the majority of entries are zero, as shown by the 25th, 50th, and 100th percentiles. This suggests it may track loss recovery or adjustments, possibly in financial or operational contexts. The column is nullable and not unique, indicating that not all entries require a value, and duplicates are allowed."
-        },
-        "sd_recovery_date": {
-          "column_info": "",
-          "description": "The `sd_recovery_date` column likely represents the date on which a specific recovery event or process was completed or recorded. As a DATE type, it captures the exact day of recovery, allowing for chronological tracking and analysis. This column is nullable, indicating that not all records may have a recovery date available. It is not a primary key, unique, or auto-incremented, suggesting it is used for reference rather than identification. Keywords: recovery date, event completion, chronological tracking, nullable date."
+          "description": "The `offer_id` column is an integer field representing unique identifiers for offers or promotions within the dataset. It likely tracks offer-specific data, with values ranging from 13 to 101, and includes statistical insights such as mean and percentiles. This column is nullable, non-unique, and not auto-incremented or a primary key."
         }
       },
-      "table_description": "The `alpl_recoveries_backup_20220822` table is part of a relational database, likely used for tracking financial recoveries and related transactions in a transportation or logistics context. It includes columns for unique trip identifiers, various types of recoveries (e.g., diesel, raw materials, fines), and associated financial amounts (recovery, exemption, paid, incentive, refund, salary). The table captures metadata such as creation and update timestamps, user identifiers, and driver information. It supports analysis of financial recoveries, deductions, and payments, aiding in financial management and accountability. The table is not constrained by primary keys or unique constraints, allowing for comprehensive data capture and retrieval."
+      "table_description": "The `products` table stores data about lawn care, gardening, and landscaping supplies, including tools and services. It includes details like pricing, categories, descriptions, images, timestamps, SEO keywords, tags, features, and status. It supports organizing, searching, and filtering products or services, with references to related tables like `categories`, `discounts`, and `offers`."
     },
-    "database_description": "The `alpl_prod_db` database, specifically the `alpl_recoveries_backup_20220822` table, is designed for managing and analyzing financial recoveries and transactions in a transportation or logistics setting. It tracks various recovery types (e.g., diesel, raw materials, fines) alongside financial details like recovery, exemption, paid, incentive, refund, and salary amounts. Metadata such as timestamps, user identifiers, and driver details are included for accountability and traceability. The table is flexible, lacking primary keys or unique constraints, to capture comprehensive data. This setup aids in financial management, enabling detailed analysis of recoveries and payments, though it does not explicitly define relationships with other tables."
+    "orders": {
+      "columns": {
+        "id": {
+          "column_info": "OD1944bb1a98a5, OD1940840b53f1, OD1943fabde510, OD19449feff505, OD193d533ac876, OD193d537d42a7, OD193d537fc7a8, OD193d53aa2390, OD193d53aff291, OD193d53b67a02",
+          "description": "Unique identifier column (`id`) storing alphanumeric IDs, likely representing distinct records or entities in the dataset. Each ID begins with \"OD\" followed by a combination of numbers and letters, ensuring record differentiation."
+        },
+        "user_id": {
+          "column_info": "b4087498-7021-70fd-f609-5937baeb1dde, c4181438-5041-7059-df30-5cea97e1e59a, b4a884b8-50d1-705b-579c-1de24300160d, 94d8f428-b0e1-70e8-1482-4a9dd98100c2, 24582458-60f1-70e3-a43d-68ebae1ce38d, 2468d408-e0a1-709b-19e7-22ea0fc9f518, d4487498-b031-70a8-303e-5df4da942a76, 84082458-2071-706f-1391-a9886b817bbd, 24182468-4041-7092-1d14-847b364606e6, 64b844e8-a081-7000-3b16-e4600a6cec8b",
+          "description": "The `user_id` column contains unique alphanumeric identifiers (UUIDs) representing individual users in the dataset. It is a VARCHAR(255) field, nullable, and non-primary, designed for user identification and tracking purposes."
+        },
+        "address_id": {
+          "column_info": {
+            "min": 96.0,
+            "max": 309.0,
+            "mean": 174.33333333333334,
+            "25%": 103.0,
+            "50%": 196.0,
+            "100%": 309.0
+          },
+          "description": "The `address_id` column is an INTEGER field representing unique identifiers for addresses in the dataset. It is nullable, non-auto-incrementing, and not a primary key, suggesting it serves as a reference or foreign key. Values range from 96 to 309, with statistical distribution indicating diverse address entries."
+        },
+        "status": {
+          "column_info": "payment_pending, payment_success, payment_failed, completed, cancelled",
+          "description": "The `status` column represents the current state of a transaction or process, indicating payment status (e.g., payment_pending, payment_success, payment_failed) or final outcomes (e.g., completed, cancelled). It is a non-null VARCHAR field with a default value of 'payment_pending', crucial for tracking transaction progress and resolution."
+        },
+        "order_value": {
+          "column_info": {
+            "min": 0.0,
+            "max": 52068.82,
+            "mean": 1273.7444834307994,
+            "25%": 24.61,
+            "50%": 142.52,
+            "100%": 52068.82
+          },
+          "description": "The `order_value` column represents the monetary value of individual orders in the dataset, stored as a numeric field with two decimal precision. It captures transaction amounts ranging from 0.00 to 52068.82, with statistical insights like mean (1273.74) and median (142.52). This non-null column is essential for analyzing order amounts, revenue trends, and financial metrics in e-commerce or sales datasets."
+        },
+        "created_at": {
+          "column_info": "",
+          "description": "The `created_at` column represents the timestamp indicating when a record was created, capturing the creation date and time. It is nullable, defaults to the current timestamp, and is essential for tracking data entry chronology, event logging, or temporal trends in the dataset."
+        },
+        "updated_at": {
+          "column_info": "",
+          "description": "The `updated_at` column, of type TIMESTAMP, likely represents the last modification or update timestamp for a record in the dataset. It is nullable and defaults to the current timestamp, capturing when data was last changed or refreshed."
+        },
+        "delivery_instructions": {
+          "column_info": "",
+          "description": "The `delivery_instructions` column contains text-based details or special notes provided for delivery purposes, such as directions, preferences, or handling instructions. This field is optional, non-unique, and stores customizable delivery-related information."
+        },
+        "installation_required": {
+          "column_info": {
+            "min": null,
+            "max": null,
+            "mean": null,
+            "25%": null,
+            "50%": null,
+            "100%": null
+          },
+          "description": "The `installation_required` column is a BOOLEAN field indicating whether installation is necessary for a specific item, product, or service. It is nullable, meaning the value can be unknown, and it does not have default, unique, or primary key constraints. This column likely represents a binary flag for installation requirements, useful for filtering or categorizing items based on setup needs."
+        },
+        "order_fulfillment_method": {
+          "column_info": "",
+          "description": "The `order_fulfillment_method` column likely represents the method or process used to fulfill customer orders, such as delivery, pickup, or shipping. It captures order logistics and fulfillment type, providing insights into operational workflows and customer preferences."
+        },
+        "delivered_date": {
+          "column_info": "",
+          "description": "The `delivered_date` column represents the timestamp indicating when an item, order, or service was successfully delivered. It is a nullable field, capturing precise delivery completion times, useful for tracking, scheduling, and analyzing delivery performance or timelines."
+        },
+        "checkout_type": {
+          "column_info": "product, cart, bundle",
+          "description": "The `checkout_type` column represents the category or method of purchase, indicating whether the transaction involves a single product, a shopping cart, or a bundled offer. It captures purchase types and checkout modes, useful for analyzing customer behavior, sales patterns, and transaction categories."
+        },
+        "admin_notes": {
+          "column_info": "",
+          "description": "The `admin_notes` column stores optional text-based annotations, comments, or observations added by administrators, providing contextual or supplementary information about records. It is non-unique, nullable, and designed for flexible, descriptive input."
+        }
+      },
+      "table_description": "The `orders` table tracks e-commerce or transactional data, storing details about individual orders, including unique IDs (`id`), user and address references (`user_id`, `address_id`), payment status (`status`), order value (`order_value`), timestamps (`created_at`, `updated_at`, `delivered_date`), and logistical details like delivery instructions, fulfillment methods, and installation needs. It supports customer behavior analysis, operational tracking, and financial reporting, with foreign keys linking users and addresses."
+    },
+    "order_items": {
+      "columns": {
+        "id": {
+          "column_info": {
+            "min": 1048.0,
+            "max": 1720.0,
+            "mean": 1449.0763209393347,
+            "25%": 1337.5,
+            "50%": 1465.0,
+            "100%": 1720.0
+          },
+          "description": "The `id` column is a non-null, auto-incrementing, primary key of type INTEGER, uniquely identifying each record in the dataset. It ranges from 1048 to 1720, representing sequential identifiers for order items or related entities."
+        },
+        "order_id": {
+          "column_info": "OD194d508307b2, OD194083bbc8f0, OD1940840b53f1, OD194508a89cfd, OD194692ae7205, OD1948ca048e12, OD1943fabde510, OD1944bc589908, OD1946940a02ea, OD19449feff505",
+          "description": "The `order_id` column contains unique alphanumeric identifiers for orders, likely representing transaction or purchase records. It is a non-primary, nullable VARCHAR field designed to store order reference codes, enabling tracking, categorization, and retrieval of order-related data."
+        },
+        "product_id": {
+          "column_info": {
+            "min": 21.0,
+            "max": 414.0,
+            "mean": 387.426614481409,
+            "25%": 404.0,
+            "50%": 409.0,
+            "100%": 414.0
+          },
+          "description": "The `product_id` column represents unique identifiers for products in the dataset, stored as integers. It likely tracks product inventory or catalog items, with values ranging from 21 to 414. This column is not a primary key, nullable, and does not auto-increment, suggesting it may reference or categorize products rather than uniquely defining them."
+        },
+        "quantity": {
+          "column_info": {
+            "min": 0.0,
+            "max": 100.0,
+            "mean": 1.5048923679060666,
+            "25%": 1.0,
+            "50%": 1.0,
+            "100%": 100.0
+          },
+          "description": "The `quantity` column represents integer values indicating the amount or count of items, transactions, or occurrences in the dataset. It ranges from 0 to 100, with a mean of approximately 1.5, suggesting frequent low quantities. Non-nullable and non-unique, it likely tracks item quantities, inventory levels, or transaction counts."
+        },
+        "price": {
+          "column_info": {
+            "min": 0.0,
+            "max": 30000.0,
+            "mean": 392.99624266144815,
+            "25%": 20.0,
+            "50%": 100.0,
+            "100%": 30000.0
+          },
+          "description": "The `price` column represents monetary values, likely indicating the cost, price, or value of items, transactions, or services in the dataset. It is a numeric field with precision up to two decimal places, ranging from 0.0 to 30,000.0, and includes statistical insights such as mean (392.99), median (100.0), and percentiles. This column is nullable, not unique, and does not auto-increment, suggesting it captures diverse financial data points."
+        }
+      },
+      "table_description": "The `order_items` table tracks individual items within orders in a relational database. Each record represents an item, identified by a unique `id`. It links orders (`order_id`) and products (`product_id`), storing quantities (`quantity`) and prices (`price`). Likely used for order management, inventory tracking, and financial analysis, it supports relationships with `orders` and `products` tables via foreign keys."
+    },
+    "wishlist": {
+      "columns": {
+        "user_id": {
+          "column_info": "84885478-9061-70ec-3dec-128beaee5207, b4087498-7021-70fd-f609-5937baeb1dde, 0458d498-a0d1-70aa-3d55-331a2acebb87, c4181438-5041-7059-df30-5cea97e1e59a, b4a884b8-50d1-705b-579c-1de24300160d, 24582458-60f1-70e3-a43d-68ebae1ce38d, f4885438-7041-70cc-7d54-0e82c91b1745, 94d8f428-b0e1-70e8-1482-4a9dd98100c2, 74081418-8061-70d3-b087-b6bb87a2ce24, 14880418-c0a1-70fe-c33e-fa981c970c83",
+          "description": "`user_id`: A unique identifier for users in the dataset, stored as a 255-character alphanumeric string in UUID format. This primary key ensures distinct user records and facilitates user-specific data retrieval, indexing, and vector-based searches."
+        },
+        "product_id": {
+          "column_info": {
+            "min": 21.0,
+            "max": 415.0,
+            "mean": 166.6917808219178,
+            "25%": 42.0,
+            "50%": 53.0,
+            "100%": 415.0
+          },
+          "description": "The `product_id` column is a unique, non-null INTEGER primary key representing distinct product identifiers in the dataset, ranging from 21 to 415. It is essential for indexing, referencing, and linking product-related data."
+        },
+        "type": {
+          "column_info": "",
+          "description": "The `type` column likely represents the category, classification, or designation of an item, entity, or record in the dataset. It stores text-based values up to 50 characters, is nullable, and is not unique or a primary key. Commonly used for grouping, filtering, or identifying types in a dataset."
+        },
+        "quantity": {
+          "column_info": {
+            "min": 1.0,
+            "max": 1.0,
+            "mean": 1.0,
+            "25%": 1.0,
+            "50%": 1.0,
+            "100%": 1.0
+          },
+          "description": "The `quantity` column is an INTEGER field representing item counts, consistently set to 1 across all records. It is nullable, defaults to 1, and is neither unique nor a primary key, suggesting it likely denotes a standardized unit quantity or single-item entries in the dataset."
+        },
+        "created_at": {
+          "column_info": "",
+          "description": "The `created_at` column represents the timestamp indicating when a record was created, storing precise date and time information. It is nullable, defaults to the current timestamp, and is crucial for tracking creation events, temporal data, and chronological order in the dataset."
+        },
+        "updated_at": {
+          "column_info": "",
+          "description": "The `updated_at` column, of type TIMESTAMP, likely represents the last modification or update timestamp for a record in the dataset. It is nullable, defaults to the current timestamp, and tracks changes, making it useful for auditing, version control, and data freshness analysis."
+        }
+      },
+      "table_description": "The `wishlist` table tracks user-specific product preferences in a relational database. Each record links a unique user (`user_id`) to a distinct product (`product_id`), with optional categorization (`type`). It includes timestamps (`created_at`, `updated_at`) for record tracking and defaults `quantity` to 1, indicating single-item entries. Likely used for managing and querying user wishlists, it supports indexing, filtering, and relational integrity via foreign keys (`users.id`, `products.id`)."
+    },
+    "database_description": "This database supports an e-commerce platform focused on lawn care, gardening, and landscaping products and services. Key tables include:\n\n- **products**: Stores product/service details (pricing, categories, descriptions, features, SEO, etc.) with links to `categories`, `discounts`, and `offers`.\n- **orders**: Tracks transactional data (user, address, payment status, delivery, installation) linked to `users` and `addresses`.\n- **order_items**: Manages items within orders, connecting `orders` and `products` for inventory and financial tracking.\n- **wishlist**: Tracks user-specific product preferences, linking `users` and `products`.\n\nRelationships include many-to-one links (e.g., `orders` to `users`, `order_items` to `products`) for seamless data integration. Developers can analyze customer behavior, operational workflows, and financial trends using these interconnected tables."
   }
 }

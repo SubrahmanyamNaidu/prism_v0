@@ -3,7 +3,10 @@ import json
 import uuid
 from datetime import datetime
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
+# from langchain_openai import ChatOpenAI
+# from langchain_community.chat_models import AzureChatOpenAI
+from langchain_openai import AzureChatOpenAI
+
 from langchain_core.messages import HumanMessage
 from langchain_core.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
 from langgraph.checkpoint.memory import MemorySaver
@@ -83,7 +86,10 @@ prompt = ChatPromptTemplate.from_messages([
 ])
 
 # Model
-model = ChatOpenAI(model_name="gpt-4.1", temperature=0)
+model = AzureChatOpenAI(    
+    azure_deployment="gpt-4o",
+    api_version="2024-12-01-preview",
+    temperature=0)
 
 # Load JSON files
 with open("semantic_database_description.json", encoding="utf-8") as f1:
@@ -108,7 +114,9 @@ class CustomJSONEncoder(json.JSONEncoder):
 
 # Embedding function
 def embed_text(text):
-    response = openai.OpenAI().embeddings.create(
+    response = openai.AzureOpenAI(    
+        azure_deployment="text-embedding-3-small",
+        api_version="2024-12-01-preview").embeddings.create(
         model="text-embedding-3-small",
         input=text
     )
@@ -116,8 +124,12 @@ def embed_text(text):
 
 def generate_echarts_from_data(chart_definitions: list):
     def convert(val):
-        if isinstance(val, str) and val.endswith("T00:00:00"):
-            return val[:10]  # Convert ISO date to 'YYYY-MM-DD'
+        if isinstance(val, (datetime, date)):
+            return val.isoformat()
+        elif isinstance(val, Decimal):
+            return float(val)
+        elif isinstance(val, RowMapping):
+            return dict(val)  # Convert ISO date to 'YYYY-MM-DD'
         return val
 
     def get_option(chart):
@@ -374,7 +386,7 @@ def execute_sql_queries(queries, user_id,db_id):
     Executes SQL queries and returns results for each query using the provided database_info.
     """
     database_info = get_database_connection(user_id,db_id)
-    print(queries)
+    # print(queries)
     # Construct DB connection URL
     db_type = database_info.get("db_type")
     if db_type == "postgresql":
